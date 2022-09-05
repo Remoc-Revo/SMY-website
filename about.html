@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>smy</title>
+        <link href="smy.css" rel="stylesheet">
+    </head>
+
+    <body onload="lengthNtimeAlert()">
+        <header>
+            <div class="schoolNameAndBadge">
+                
+                <img class="badge" src="images/smybadge.png">
+                <h1>St. Mary's School Yala</h1>
+            </div>
+           
+            <div>
+                <nav>
+                    <ul class="headerItems">
+                        <li><a href="about.html"class="current" >About</a></li>
+                        <li><a href="departments.html">Departments</a></li>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="students.html">students</a></li>
+                        <li><a href="extendedHistory.html">Extended history</a></li>
+                        <li><a href="examResults.html">Exam Results</a></li>
+                        <li><a href="alumni.html">Alumni</a></li>
+                    </ul>
+                </nav>
+    
+            </div>
+
+           
+        </header>
+        
+       <section>
+            <img class="adminBlock" src="images/smyAdmin.jpeg">
+            <p class="introduction">St. Mary's School Yala is one of the esteemed high schools in Kenya.<br>
+            It was established in 1927, as a mission school by Catholic Fathers, hence a Catholic school.
+            Over the years the school  has held a high level of performance in various activities, in addition 
+            to the excellent academic performance in the national exams.
+    
+            </p>
+
+            <p>The school has produced many productive and successful citizens, who play 
+                very important roles in the nation.This is a result of the great morals and 
+                enforced by the school.
+            </p>
+
+            <dl>
+                <dt>Motto</dt>
+                <dd>Shine in everything everywhere.</dd>
+
+                <dt>Mission</dt>
+                <dd> To provide high quality education and childcare in a safe, respectful and inclusive environment 
+                    that builds a foundation for life-long learning.</dd>
+
+                <dt>Vission</dt>
+                <dd>Our Vision is a community where all children feel loved, respected and encouraged 
+                    to develop to their fullest potential.</dd>
+
+                <dt>Core Values</dt>
+                <dd>
+                    <ul>
+                        <li>Discipline</li>
+                        <li>Deterimination</li>
+                        <li>Christian Values</li>
+                        
+                    </ul>
+                </dd>
+            </dl>
+       </section>
+
+       
+       
+       <script>
+           function lengthNtimeAlert(){
+               
+               let date_ob = new Date();
+
+                // current date
+                // adjust 0 before single digit date
+                let date = ("0" + date_ob.getDate()).slice(-2);
+
+                // current month
+                let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+
+                // current year
+                let year = date_ob.getFullYear();
+
+                // current hours
+                let hours = date_ob.getHours();
+
+                // current minutes
+                let minutes = date_ob.getMinutes();
+
+                // current seconds
+                let seconds = date_ob.getSeconds();
+
+                date=year + "-" + month + "-" + date ;
+            
+                let time=hours + ":" + minutes + ":" + seconds;
+
+                var reading_time=30;
+                var finishing_time;
+
+                if((minutes+reading_time)>60){
+                    minutes=(minutes+reading_time)-60;
+                    hours+=1;
+                    finishing_time=hours + ":" + minutes + ":" + seconds;
+                }
+                else{
+                    finishing_time=hours + ":" + minutes + ":" + seconds;
+                }
+
+                alert("Today is : "+date+"\n Time:"+time+"\n Approximated pages reading time is 30 minutes.\n You'll be done by: "+finishing_time);
+            }
+       </script>
+    </body>
+
+</html>
